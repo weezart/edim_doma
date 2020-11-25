@@ -1,0 +1,36 @@
+@mixin make-grid($column: 12) {
+  @for $i from 1 through $column {
+    .col-lg-#{$i} {
+      width: 100% / $column * $i;
+    }
+  }
+  @each $name, $value in ($breakpoints-width) {
+    @media (max-width: #{$value}px) {
+      @for $i from 1 through $column {
+        .col-#{$name}-#{$i} {
+          width: 100% / $column * $i;
+        }
+      }
+    }
+  }
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+  &::before {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}

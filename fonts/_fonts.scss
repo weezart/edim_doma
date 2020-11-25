@@ -1,0 +1,19 @@
+@import "try-fonts";
+
+// Основные шрифты IVD.ru
+$font-default: 'Roboto-Light', sans-serif; // Обычный текст, шрифт без засечек
+$font-title: 'Roboto', serif; // Различные заголовки, шрифт с засечками
+
+
+// Шрифты SP.
+$font-default-1: 'Roboto', sans-serif;
+$font-title-1: 'Roboto', sans-serif;
+
+
+@mixin font-default($sizeValue: 14px, $line: 1.2, $font-weight: normal) {
+  font: $font-weight #{$sizeValue}/#{$line} $font-default;
+}
+
+@mixin font-title($sizeValue: 14px, $line: $sizeValue, $font-weight: 400) {
+  font: $font-weight #{$sizeValue}/#{$line} $font-title;
+}
