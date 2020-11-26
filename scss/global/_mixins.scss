@@ -1,14 +1,14 @@
 @mixin make-grid($column: 12) {
   @for $i from 1 through $column {
-    .col-lg-#{$i} {
-      width: 100% / $column * $i;
+    .col-xs-#{$i} {
+      width: calc(100% / #{$column} * #{$i});
     }
   }
   @each $name, $value in ($breakpoints-width) {
-    @media (max-width: #{$value}px) {
+    @media (min-width: #{$value}px) {
       @for $i from 1 through $column {
         .col-#{$name}-#{$i} {
-          width: 100% / $column * $i;
+          width: calc(100% / #{$column} * #{$i});
         }
       }
     }

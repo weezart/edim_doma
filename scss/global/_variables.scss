@@ -1,0 +1,15 @@
+$media-breakpoints: (
+    mobile: 0 659,
+    tablet: 660 989,
+    ipad: 990 1319,
+    desktop: 1320
+);
+
+$breakpoints-width: (
+    lg: 1320,
+    md: 990,
+    sm: 660
+);
+
+$lg-gutter: 30px;
+$text-padding: 20px;
