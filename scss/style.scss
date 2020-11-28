@@ -2,4 +2,11 @@
 @import "global/variables";
 @import "components/media-mixin";
 @import "global/mixins";
+@import "../fonts/try-fonts";
+@import "../fonts/fonts";
+
 @import "global/scaffolding";
+
+@import "blocks/section";
+@import "blocks/announce";
+@import "blocks/breadcrumbs";

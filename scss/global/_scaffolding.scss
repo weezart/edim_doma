@@ -1,7 +1,27 @@
-@include make-grid();
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.content-box-component {
+  box-sizing: content-box;
+}
 
 body {
+  @include font-default(15px, 25px, 400);
+  color: $text-gray;
+  background-color: $light;
 }
-/* Мы подобрали для вас самые интересные рецепты и кулинарные советы для незабываемого празднования нового 2021 года. */
+
+.container {
+  margin: 0 auto;
+  width: 1210px;
+  padding: 0 $spacer/2;
+}
 
 
