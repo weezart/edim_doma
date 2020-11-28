@@ -8,25 +8,30 @@
 .announce {
   flex: none;
   margin: 0 #{$spacer/2} $spacer;
-
-  .announce-list--top & {
-    width: 580px;
-  }
+  width: 580px;
 }
 
 .announce__image {
+  position: relative;
   display: block;
   border-radius: 5px;
   overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50.52%, rgba(0, 0, 0, 0.2) 80.21%);
+  }
   img {
     display: block;
     width: 100%;
     height: auto;
   }
-}
-
-.announce__info {
-
 }
 
 .announce__category {
