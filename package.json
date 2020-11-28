@@ -4,9 +4,7 @@
     "description": "basic config",
     "main": "index.php",
     "scripts": {
-        "build": "gulp build",
-        "dev": "gulp build",
-        "svg": "gulp svg"
+        "start": "gulp build"
     },
     "engines": {
         "node": "8.15"
