@@ -4,6 +4,10 @@
   @include font-title(32px, 1.3125, 600);
   color: $dark;
   letter-spacing: -0.012em;
+
+  .recipes & {
+    margin-bottom: 10px;
+  }
 }
 
 .section-description {
@@ -17,12 +21,14 @@
 
 .section-image {
   position: absolute;
-  right: 0;
+  right: -64px;
   top: 0;
   width: 265px;
   .top-soviets & {
     top: -38px;
-    right: -64px;
+  }
+  .recipes & {
+    top: 23px;
   }
   img {
     display: block;
@@ -31,7 +37,31 @@
   }
 }
 
+.section-btn {
+  position: absolute;
+  top: 24px;
+  right: 9px;
+  text-decoration: none;
+  color: $light;
+  background: #229644;
+  border-radius: 20px;
+  @include font-default(13px, 24px, 700);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 20px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
 .top-soviets {
+  position: relative;
+  padding: 18px 0 16px;
+}
+
+.recipes {
   position: relative;
   padding: 18px 0 0;
 }

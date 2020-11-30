@@ -9,6 +9,13 @@
   flex: none;
   margin: 0 #{$spacer/2} $spacer;
   width: 580px;
+  &--big-image {
+    position: relative;
+    height: 350px;
+  }
+  &--small {
+    width: 280px;
+  }
 }
 
 .announce__image {
@@ -26,6 +33,25 @@
     background:
         linear-gradient(0deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
         linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50.52%, rgba(0, 0, 0, 0.2) 80.21%);
+  }
+  .announce--video &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba($dark, 0.8) url(../img/play.svg) 22px 16px no-repeat;
+    background-size: 22px auto;
+    border-radius: 50%;
+  }
+  .announce--big-image & {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
   img {
     display: block;
@@ -57,6 +83,13 @@
   @include font-title(20px, 1.4, 600);
   color: $dark;
   letter-spacing: -0.01em;
+  .announce--big-image & {
+    position: absolute;
+    left: 20px;
+    bottom: 49px;
+    color: $light;
+    font-size: 22px;
+  }
   a {
     color: inherit;
     text-decoration: none;
@@ -72,6 +105,11 @@
 .announce__author {
   display: flex;
   align-items: center;
+  .announce--big-image & {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 .announce__author-image {
@@ -85,8 +123,73 @@
 .announce__author-info {
   @include font-default(13px, 1.3846, 400);
   color: #4C4C4C;
+  .announce--big-image & {
+    color: $light;
+  }
   a {
     color: inherit;
     text-decoration: none;
+  }
+}
+
+.announce__image-wrapper {
+  position: relative;
+  .announce--small & {
+    margin-bottom: 10px;
+  }
+}
+
+.recipe-stats {
+  position: absolute;
+  display: flex;
+  .announce--big-image & {
+    left: 20px;
+    bottom: 20px;
+  }
+  .announce--small & {
+    flex-wrap: wrap;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    .recipe-stats__item--rating {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .recipe-stats__item--duration {
+      margin-left: auto;
+    }
+  }
+}
+
+.recipe-stats__item {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  color: $light;
+  @include font-default(15px, 1.3333, 600);
+  &:last-of-type {
+    margin: 0;
+  }
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &--rating::before {
+    background-image: url(../img/star.svg);
+    background-size: 20px auto;
+  }
+  &--favorite::before {
+    background-image: url(../img/heart.svg);
+  }
+  &--comments::before {
+    background-image: url(../img/comment.svg);
+    background-size: 17px auto;
+  }
+  &--duration::before {
+    background-image: url(../img/clock.svg);
   }
 }
