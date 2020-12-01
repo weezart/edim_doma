@@ -16,7 +16,7 @@
 
 .breadcrumbs__item {
   color: $text-gray;
-  @include font-default(11px, 16px, 400);
+  @include font-default(11px, 16px, 600);
 
   &:not(:last-child) {
     position: relative;
