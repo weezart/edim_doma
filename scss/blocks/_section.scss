@@ -8,6 +8,9 @@
   .recipes & {
     margin-bottom: 10px;
   }
+  .event-soviets & {
+    margin-bottom: 32px;
+  }
 }
 
 .section-description {
@@ -29,6 +32,9 @@
   }
   .recipes & {
     top: 23px;
+  }
+  .event-soviets & {
+    top: -75px;
   }
   img {
     display: block;
@@ -64,4 +70,10 @@
 .recipes {
   position: relative;
   padding: 18px 0 0;
+  z-index: 1;
+}
+
+.event-soviets {
+  position: relative;
+  padding: 20px 0 0;
 }

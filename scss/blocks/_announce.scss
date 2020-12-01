@@ -13,7 +13,13 @@
     position: relative;
     height: 350px;
   }
-  &--small {
+  &--tall {
+    position: relative;
+    width: 280px;
+    height: 450px;
+  }
+  &--small,
+  &--less {
     width: 280px;
   }
 }
@@ -46,7 +52,19 @@
     background-size: 22px auto;
     border-radius: 50%;
   }
-  .announce--big-image & {
+  .announce--tall &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 86px;
+    background: url(../img/newyear.svg) no-repeat;
+    background-size: contain;
+  }
+  .announce--big-image &,
+  .announce--tall & {
     position: absolute;
     left: 0;
     top: 0;
@@ -69,6 +87,9 @@
   .announce-list--top & {
     margin: 16px 0 9px;
   }
+  .announce--less & {
+    margin: 15px 0 4px;
+  }
   a {
     text-decoration: none;
     color: inherit;
@@ -90,6 +111,20 @@
     color: $light;
     font-size: 22px;
   }
+  .announce--tall & {
+    position: absolute;
+    left: 33px;
+    right: 33px;
+    top: 58px;
+    text-align: center;
+    color: $light;
+    font-size: 26px;
+    text-shadow:
+        $dark 1px 1px 0,
+        $dark -1px -1px 0,
+        $dark -1px 1px 0,
+        $dark 1px -1px 0;
+  }
   a {
     color: inherit;
     text-decoration: none;
@@ -100,6 +135,9 @@
   margin: 0 0 10px;
   @include font-default(15px, 1.6666, 500);
   color: #4C4C4C;
+  .announce--less & {
+    margin-bottom: 6px;
+  }
 }
 
 .announce__author {
@@ -191,5 +229,22 @@
   }
   &--duration::before {
     background-image: url(../img/clock.svg);
+  }
+}
+
+.announce__btn-link {
+  text-transform: uppercase;
+  @include font-default(13px, 1.3846, 700);
+  padding: 7px 14px 8px;
+  border: 1px solid $light;
+  border-radius: 20px;
+  background: transparent;
+  color: $light;
+  text-decoration: none;
+  .announce--tall & {
+    position: absolute;
+    left: 50%;
+    bottom: 55px;
+    transform: translateX(-50%);
   }
 }
