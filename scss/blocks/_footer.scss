@@ -1,0 +1,156 @@
+.page-footer {
+  border-top: 1px solid #DDDAD5;
+
+}
+
+.footer-top {
+  display: flex;
+  padding: 35px 0 10px;
+  border-bottom: 1px solid #DDDAD5;
+}
+
+.footer-column {
+  width: 205px;
+  margin: 5px 9px 0 11px;
+  &--social {
+    width: 230px;
+    margin: 0 auto 0 0;
+  }
+}
+
+.footer-logo {
+  display: block;
+  margin: 0 0 24px;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-social__item {
+  margin: 0 19px 20px 0;
+  img {
+    display: block;
+  }
+}
+
+.footer-title {
+  text-transform: uppercase;
+  color: rgba(#000, 0.3);
+  margin: 7px 0 12px;
+  @include font-default(13px, 1.5384, 700);
+  letter-spacing: 0.05em;
+}
+
+.footer-menu {
+  margin: 0 0 15px;
+  &:last-child {
+    margin: 0;
+  }
+  a {
+    display: block;
+    margin: 0 0 13px;
+    text-decoration: none;
+    @include font-default(15px, 1.4666, 400);
+    color: $dark;
+
+    &:hover,
+    &.active {
+      text-decoration: none;
+      color: #EB4C32;
+    }
+  }
+}
+
+.footer-links--top {
+  margin: 0 0 15px;
+}
+
+.footer-links__title {
+  display: block;
+  margin: 0 0 5px;
+  @include font-default(15px, 1.4666, 400);
+  color: rgba(#000, 0.3);
+}
+
+.footer-links__btn {
+  margin: 0 0 10px;
+  background: #FFFFFF;
+  border: 1px solid #DDDAD5;
+  box-sizing: border-box;
+  border-radius: 22px;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    display: block;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.footer-bottom {
+  padding: 11px 0;
+  display: flex;
+  justify-content: space-between;
+  color: $text-gray
+}
+
+.footer-bottom__column {
+  flex: none;
+  &:first-child {
+    width: 505px;
+  }
+  &:last-child {
+    width: 665px;
+  }
+  .footer-title {
+    margin: 3px 0 5px;
+  }
+}
+
+.footer-bottom__description {
+  margin: 0 0 17px;
+  @include font-default(13px, 1.8461, 400);
+}
+
+.footer-bottom__copyright {
+  @include font-default(13px, 1.5384, 400);
+}
+
+.footer-navigation {
+  overflow: hidden;
+}
+.footer-navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 -26px;
+  padding: 0;
+  list-style: none;
+}
+.footer-navigation__item {
+  position: relative;
+  @include font-default(15px, 1.8666, 400);
+  padding: 0 0 0 26px;
+  a {
+    text-decoration: none;
+    color: $text-gray;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #DDDAD5;
+  }
+}
