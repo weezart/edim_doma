@@ -3,24 +3,48 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 #{-$spacer/2};
+  @include media(mobile) {
+    display: block;
+    margin: 0;
+    &--events {
+      display: flex;
+      justify-content: space-between;
+      .announce {
+        @include media(mobile) {
+          width: calc(50% - 5px);
+        }
+      }
+    }
+  }
 }
 
 .announce {
   flex: none;
   margin: 0 #{$spacer/2} $spacer;
   width: 580px;
+  @include media(mobile) {
+    width: auto;
+    margin: 0 0 $spacer/2;
+  }
   &--big-image {
     position: relative;
     height: 350px;
+    @include media(mobile) {
+      height: auto;
+    }
   }
   &--tall {
     position: relative;
-    width: 280px;
-    height: 450px;
+    @include media(desktop) {
+      width: 280px;
+      height: 450px;
+    }
   }
   &--small,
   &--less {
-    width: 280px;
+    @include media(desktop) {
+      width: 280px;
+    }
   }
 }
 
@@ -62,14 +86,21 @@
     height: 86px;
     background: url(../img/newyear.svg) no-repeat;
     background-size: contain;
+    @include media(mobile) {
+      width: 56px;
+      height: 54px;
+      top: 65%;
+    }
   }
   .announce--big-image &,
   .announce--tall & {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    @include media(tablet up) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
   img {
     display: block;
@@ -86,9 +117,15 @@
   letter-spacing: 0.06em;
   .announce-list--top & {
     margin: 16px 0 9px;
+    @include media(mobile) {
+      margin-top: 8px;
+    }
   }
   .announce--less & {
     margin: 15px 0 4px;
+    @include media(mobile) {
+      margin-top: 8px;
+    }
   }
   a {
     text-decoration: none;
@@ -105,11 +142,16 @@
   color: $dark;
   letter-spacing: -0.01em;
   .announce--big-image & {
-    position: absolute;
-    left: 20px;
-    bottom: 49px;
-    color: $light;
-    font-size: 22px;
+    @include media(mobile) {
+      margin-top: 10px;
+    }
+    @include media(tablet up) {
+      position: absolute;
+      left: 20px;
+      bottom: 49px;
+      color: $light;
+      font-size: 22px;
+    }
   }
   .announce--tall & {
     position: absolute;
@@ -124,6 +166,17 @@
         $dark -1px -1px 0,
         $dark -1px 1px 0,
         $dark 1px -1px 0;
+    @include media(mobile) {
+      top: 30px;
+      right: 10px;
+      left: 10px;
+      @include font-default(15px, 20px, 700);
+    }
+  }
+  .announce--less & {
+    @include media(mobile) {
+      @include font-default(15px, 22px, 600);
+    }
   }
   a {
     color: inherit;
@@ -137,6 +190,9 @@
   color: #4C4C4C;
   .announce--less & {
     margin-bottom: 6px;
+    @include media(mobile) {
+      display: none;
+    }
   }
 }
 
@@ -246,5 +302,8 @@
     left: 50%;
     bottom: 55px;
     transform: translateX(-50%);
+    @include media(mobile) {
+      display: none;
+    }
   }
 }

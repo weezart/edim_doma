@@ -22,6 +22,12 @@ body {
   margin: 0 auto;
   width: 1210px;
   padding: 0 $spacer/2;
+  @include media(mobile) {
+    width: auto;
+    padding: 0 $spacer/1.5;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 

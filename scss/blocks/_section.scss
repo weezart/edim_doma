@@ -5,6 +5,11 @@
   color: $dark;
   letter-spacing: -0.012em;
 
+  @include media(mobile) {
+    @include font-title(26px, 32px, 600);
+    margin: 0 120px 7px 0;
+  }
+
   .recipes & {
     margin-bottom: 12px;
   }
@@ -19,7 +24,11 @@
   color: $dark;
   position: relative;
   width: 937px;
-  letter-spacing: -0.01em;;
+  letter-spacing: -0.01em;
+  @include media(mobile) {
+    width: auto;
+    margin-bottom: 25px;
+  }
 }
 
 .section-image {
@@ -27,20 +36,37 @@
   right: -64px;
   top: 0;
   width: 265px;
+  @include media(mobile) {
+    width: 130px;
+    right: -55px;
+  }
   .top-soviets & {
     top: -38px;
+    @include media(mobile) {
+      top: -2px;
+    }
   }
   .recipes & {
-    top: 23px;
+    top: -8px;
   }
   .event-soviets & {
     top: -75px;
+    @include media(mobile) {
+      top: 15px;
+    }
   }
   .about & {
     right: auto;
     left: -49px;
     width: 400px;
     top: 50px;
+    @include media(mobile) {
+      width: 320px;
+      left: 57%;
+      top: -30px;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
   }
   img {
     display: block;
@@ -62,6 +88,15 @@
   text-transform: uppercase;
   padding: 5px 20px;
 
+  @include media(mobile) {
+    right: 50%;
+    top: auto;
+    bottom: 30px;
+    transform: translateX(50%);
+    width: 290px;
+    text-align: center;
+  }
+
   &:hover {
     text-decoration: none;
   }
@@ -71,12 +106,18 @@
 .top-soviets {
   position: relative;
   padding: 18px 0 16px;
+  @include media(mobile) {
+    padding-bottom: 0;
+  }
 }
 
 .recipes {
   position: relative;
   padding: 18px 0 0;
   z-index: 1;
+  @include media(mobile) {
+    padding-bottom: 70px;
+  }
 }
 
 .event-soviets {
@@ -88,12 +129,19 @@
   border-top: 1px solid #DDDAD5;
   padding: 81px 100px 97px 300px;
   color: $dark;
+  @include media(mobile) {
+    padding: 300px 0 40px;
+  }
 }
 .about__title {
   @include font-title(26px, 1.3846, 600);
   margin: 0 0 31px;
   position: relative;
   letter-spacing: -0.01em;
+  @include media(mobile) {
+    @include font-title(22px, 1.3846, 600);
+    margin-bottom: 20px;
+  }
 }
 
 .about__description {
