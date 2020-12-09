@@ -5,6 +5,10 @@
   color: $dark;
   letter-spacing: -0.012em;
 
+  @include media(tablet) {
+    font-size: get-vw(32);
+  }
+
   @include media(mobile) {
     @include font-title(26px, 32px, 600);
     margin: 0 120px 7px 0;
@@ -12,9 +16,15 @@
 
   .recipes & {
     margin-bottom: 12px;
+    @include media(tablet) {
+      margin-bottom: get-vw(12);
+    }
   }
   .event-soviets & {
     margin-bottom: 32px;
+    @include media(tablet) {
+      margin-bottom: get-vw(32);
+    }
   }
 }
 
@@ -25,6 +35,11 @@
   position: relative;
   width: 937px;
   letter-spacing: -0.01em;
+  @include media(tablet) {
+    font-size: get-vw(20);
+    width: get-vw(937);
+    margin-bottom: get-vw(38);
+  }
   @include media(mobile) {
     width: auto;
     margin-bottom: 25px;
@@ -36,12 +51,23 @@
   right: -64px;
   top: 0;
   width: 265px;
+  @include media(tablet) {
+    right: get-vw(-64);
+    width: get-vw(265);
+  }
   @include media(mobile) {
     width: 130px;
     right: -55px;
+    @include media(tablet) {
+      width: get-vw(130);
+      right: get-vw(-55);
+    }
   }
   .top-soviets & {
     top: -38px;
+    @include media(tablet) {
+      top: get-vw(-38);
+    }
     @include media(mobile) {
       top: -2px;
     }
@@ -51,6 +77,9 @@
   }
   .event-soviets & {
     top: -75px;
+    @include media(tablet) {
+      top: get-vw(-75);
+    }
     @include media(mobile) {
       top: 15px;
     }
@@ -60,6 +89,11 @@
     left: -49px;
     width: 400px;
     top: 50px;
+    @include media(tablet) {
+      right: get-vw(-49);
+      width: get-vw(400);
+      top: get-vw(50);
+    }
     @include media(mobile) {
       width: 320px;
       left: 57%;
@@ -83,10 +117,17 @@
   color: $light;
   background: #229644;
   border-radius: 20px;
-  @include font-default(13px, 24px, 700);
+  @include font-default(13px, 1.8461, 700);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 5px 20px;
+
+  @include media(tablet) {
+    font-size: get-vw(13);
+    padding: get-vw(5) get-vw(20);
+    top: get-vw(24);
+    right: get-vw(9);
+  }
 
   @include media(mobile) {
     right: 50%;
@@ -106,6 +147,9 @@
 .top-soviets {
   position: relative;
   padding: 18px 0 16px;
+  @include media(tablet) {
+    padding: get-vw(18) 0 get-vw(16);
+  }
   @include media(mobile) {
     padding-bottom: 0;
   }
@@ -115,6 +159,9 @@
   position: relative;
   padding: 18px 0 0;
   z-index: 1;
+  @include media(tablet) {
+    padding-top: get-vw(18);
+  }
   @include media(mobile) {
     padding-bottom: 70px;
   }
@@ -123,12 +170,18 @@
 .event-soviets {
   position: relative;
   padding: 20px 0 58px;
+  @include media(tablet) {
+    padding: get-vw(20) 0 get-vw(58);
+  }
 }
 .about {
   position: relative;
   border-top: 1px solid #DDDAD5;
   padding: 81px 100px 97px 300px;
   color: $dark;
+  @include media(tablet) {
+    padding: get-vw(81) get-vw(100) get-vw(97) get-vw(300);
+  }
   @include media(mobile) {
     padding: 300px 0 40px;
   }
@@ -138,6 +191,9 @@
   margin: 0 0 31px;
   position: relative;
   letter-spacing: -0.01em;
+  @include media(tablet) {
+    margin: 0 0 get-vw(31);
+  }
   @include media(mobile) {
     @include font-title(22px, 1.3846, 600);
     margin-bottom: 20px;
@@ -147,8 +203,19 @@
 .about__description {
   position: relative;
   letter-spacing: 0.011em;
+  h2 {
+    margin: 30px 0 15px;
+    @include font-default(20px, 1.25, 700);
+    @include media(tablet) {
+      font-size: get-vw(20);
+      padding: get-vw(30) 0 get-vw(15);
+    }
+  }
   p {
     margin: 0 0 15px;
+    @include media(tablet) {
+      margin-bottom: get-vw(15);
+    }
     a {
       color: #EB4C32;
       text-decoration: none;

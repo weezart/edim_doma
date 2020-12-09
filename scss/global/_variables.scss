@@ -9,3 +9,7 @@ $spacer: 20px;
 $dark: #111111;
 $light: #ffffff;
 $text-gray: #888888;
+
+@function get-vw($target) {
+  @return ($target / 1240) * 100vw;
+}

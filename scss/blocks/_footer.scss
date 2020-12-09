@@ -6,30 +6,71 @@
   display: flex;
   padding: 35px 0 10px;
   border-bottom: 1px solid #DDDAD5;
+  @include media(tablet) {
+    padding: get-vw(35) 0 get-vw(10);
+  }
+  @include media(mobile) {
+    display: block;
+    padding: 20px 0;
+  }
 }
 
 .footer-column {
   width: 205px;
   margin: 5px 9px 0 11px;
+  @include media(tablet) {
+    width: get-vw(205);
+    margin: get-vw(5) get-vw(9) 0 get-vw(11);
+  }
   &--social {
     width: 230px;
     margin: 0 auto 0 0;
+    @include media(tablet) {
+      width: get-vw(230);
+    }
+    @include media(mobile) {
+      width: auto;
+      margin: 0;
+    }
+  }
+  @include media(mobile) {
+    width: auto;
+    margin: 0;
   }
 }
 
 .footer-logo {
   display: block;
   margin: 9px 0 15px;
+  @include media(tablet) {
+    margin: get-vw(9) 0 get-vw(15);
+  }
+  @include media(mobile) {
+    margin: 0 auto 15px;
+    width: 141px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .footer-social {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  @include media(mobile) {
+    width: 260px;
+    justify-content: center;
+    margin: 0 auto 15px;
+  }
 }
 
 .footer-social__item {
   margin: 0 19px 20px 0;
+  @include media(tablet) {
+    margin: 0 get-vw(19) get-vw(20) 0;
+  }
   img {
     display: block;
   }
@@ -41,10 +82,23 @@
   margin: 7px 0 12px;
   @include font-default(13px, 1.5384, 700);
   letter-spacing: 0.05em;
+  @include media(tablet) {
+    font-size: get-vw(13);
+    margin: get-vw(7) 0 get-vw(12);
+  }
+  @include media(mobile) {
+    font-size: 12px;
+  }
 }
 
 .footer-menu {
   margin: 0 0 15px;
+  @include media(tablet) {
+    margin: 0 0 get-vw(15);
+  }
+  @include media(mobile) {
+    display: none;
+  }
   &:last-child {
     margin: 0;
   }
@@ -54,6 +108,10 @@
     text-decoration: none;
     @include font-default(15px, 1.4666, 400);
     color: $dark;
+    @include media(tablet) {
+      font-size: get-vw(15);
+      margin: 0 0 get-vw(13);
+    }
 
     &:hover,
     &.active {
@@ -65,6 +123,9 @@
 
 .footer-links--top {
   margin: 0 0 15px;
+  @include media(tablet) {
+    margin: 0 0 get-vw(15);
+  }
 }
 
 .footer-links__title {
@@ -72,6 +133,10 @@
   margin: 0 0 5px;
   @include font-default(15px, 1.4666, 400);
   color: rgba(#000, 0.3);
+  @include media(tablet) {
+    margin: 0 0 get-vw(5);
+    font-size: get-vw(15);
+  }
 }
 
 .footer-links__btn {
@@ -85,6 +150,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include media(tablet) {
+    margin: 0 0 get-vw(10);
+    height: get-vw(44);
+  }
   img {
     display: block;
   }
@@ -98,16 +167,32 @@
   padding: 11px 0;
   display: flex;
   justify-content: space-between;
-  color: $text-gray
+  color: $text-gray;
+  @include media(tablet) {
+    padding: get-vw(11) 0;
+  }
 }
 
 .footer-bottom__column {
   flex: none;
   &:first-child {
     width: 505px;
+    @include media(tablet) {
+      width: get-vw(505);
+    }
+    @include media(mobile) {
+      width: auto;
+      flex: auto;
+    }
   }
   &:last-child {
     width: 665px;
+    @include media(tablet) {
+      width: get-vw(665);
+    }
+    @include media(mobile) {
+      width: auto;
+    }
   }
   .footer-title {
     margin: 3px 0 5px;
@@ -117,29 +202,40 @@
 .footer-bottom__description {
   margin: 0 0 17px;
   @include font-default(13px, 1.8461, 400);
+  @include media(tablet) {
+    margin: 0 0 get-vw(17);
+    font-size: get-vw(13);
+  }
 }
 
 .footer-bottom__copyright {
   @include font-default(13px, 1.5384, 400);
+  @include media(tablet) {
+    font-size: get-vw(13);
+  }
 }
 
 .footer-navigation {
+  display: none;
+  @include media(mobile) {
+    display: block;
+  }
   overflow: hidden;
 }
 .footer-navigation__list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 0 -26px;
+  margin: 0 0 15px -26px;
   padding: 0;
   list-style: none;
 }
 .footer-navigation__item {
   position: relative;
-  @include font-default(15px, 1.8666, 400);
+  @include font-default(14px, 1.8666, 400);
   padding: 0 0 0 26px;
   a {
     text-decoration: none;
-    color: $text-gray;
+    color: $dark;
   }
   &::before {
     content: "";

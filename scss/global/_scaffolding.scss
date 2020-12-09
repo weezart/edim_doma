@@ -13,16 +13,19 @@ html {
 }
 
 body {
-  @include font-default(15px, 25px, 400);
+  @include font-default(15px, 1.6666, 400);
   color: $text-gray;
   background-color: $light;
+  @include media(tablet) {
+    font-size: get-vw(15);
+  }
 }
 
 .container {
   margin: 0 auto;
   width: 1210px;
   padding: 0 $spacer/2;
-  @include media(mobile) {
+  @include media(tablet down) {
     width: auto;
     padding: 0 $spacer/1.5;
     max-width: 100%;
